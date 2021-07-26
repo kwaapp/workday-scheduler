@@ -144,3 +144,95 @@ var auditTime = function () {
     };
 }
 // End Audit Timeblock
+
+
+// Add delete event function for each time block
+$("#save-delete9").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour9");
+    $("#eventblock9").val("");
+})
+$("#save-delete10").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour10");
+    $("#eventblock10").val("");
+})
+$("#save-delete11").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour11");
+    $("#eventblock11").val("");
+})
+$("#save-delete12").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour12");
+    $("#eventblock12").val("");
+})
+$("#save-delete13").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour13");
+    $("#eventblock13").val("");
+})
+$("#save-delete14").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour14");
+    $("#eventblock14").val("");
+})
+$("#save-delete15").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour15");
+    $("#eventblock15").val("");
+})
+$("#save-delete16").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour16");
+    $("#eventblock16").val("");
+})
+$("#save-delete17").on("click", "i.fa-trash", function () {
+    localStorage.removeItem("hour17");
+    $("#eventblock17").val("");
+})
+// End delete event functions
+
+
+// Add save event function for each time block
+$("#save-delete9").on("click", "i.fa-save", function () {
+    var event9 = $("#eventblock9").val().trim();
+    localStorage.setItem('hour9', JSON.stringify(event9));
+})
+$("#save-delete10").on("click", "i.fa-save", function () {
+    var event10 = $("#eventblock10").val().trim();
+    localStorage.setItem('hour10', JSON.stringify(event10));
+})
+$("#save-delete11").on("click", "i.fa-save", function () {
+    var event11 = $("#eventblock11").val().trim();
+    localStorage.setItem('hour11', JSON.stringify(event11));
+})
+$("#save-delete12").on("click", "i.fa-save", function () {
+    var event12 = $("#eventblock12").val().trim();
+    localStorage.setItem('hour12', JSON.stringify(event12));
+})
+$("#save-delete13").on("click", "i.fa-save", function () {
+    var event13 = $("#eventblock13").val().trim();
+    localStorage.setItem('hour13', JSON.stringify(event13));
+})
+$("#save-delete14").on("click", "i.fa-save", function () {
+    var event14 = $("#eventblock14").val().trim();
+    localStorage.setItem('hour14', JSON.stringify(event14));
+})
+$("#save-delete15").on("click", "i.fa-save", function () {
+    var event15 = $("#eventblock15").val().trim();
+    localStorage.setItem('hour15', JSON.stringify(event15));
+})
+$("#save-delete16").on("click", "i.fa-save", function () {
+    var event16 = $("#eventblock16").val().trim();
+    localStorage.setItem('hour16', JSON.stringify(event16));
+})
+$("#save-delete17").on("click", "i.fa-save", function () {
+    var event17 = $("#eventblock17").val().trim();
+    localStorage.setItem('hour17', JSON.stringify(event17));
+})
+// End save event functions
+
+
+// This function runs but the time is never refreshed?
+setInterval(function () {
+    $(".event-group .events").each(function (index, el) {
+        auditTime(el);
+        //console.log(currentTime);
+    });
+
+}, (1000 * 60)); // 1000ms x 60 = 1 minute x 30 = 30 minutes
+
+auditTime();
